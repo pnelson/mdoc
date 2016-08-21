@@ -1,0 +1,14 @@
+{{define "content"}}
+<div class="ui one column grid">
+  <div class="row">
+    <div class="column">
+      <h1>{{.Dir}}</h1>
+      <ul>
+        {{range .Files}}
+        <li><a href="./{{.DisplayName}}">{{.DisplayName}}</a></li>
+        {{end}}
+      </ul>
+    </div>
+  </div>
+</div>
+{{end}}
