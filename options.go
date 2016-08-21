@@ -78,8 +78,7 @@ func defaultDocumentRenderer(themeDir string) func(DocumentPage) ([]byte, error)
 }
 
 // ErrorHandler sets the http.Handler to delegate to when errors are returned.
-// Defaults to writing a response with HTTP 404 Not Found if the package fails
-// to import, otherwise HTTP 500 Internal Server Error to the response.
+// Defaults to writing plain text error messages.
 func ErrorHandler(fn func(http.ResponseWriter, *http.Request, error)) Option {
 	return func(h *handler) {
 		h.errorHandler = fn
