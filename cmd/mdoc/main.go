@@ -36,7 +36,7 @@ func main() {
 		dir = args[0]
 	}
 	m := mdoc.New(dir, mdoc.Theme(*theme))
-	err := http.ListenAndServe(":3000", m)
+	err := http.ListenAndServe(*addr, m)
 	if err != nil {
 		log.Fatal(err)
 	}
